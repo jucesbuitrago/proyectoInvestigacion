@@ -7,7 +7,7 @@ export function App () {
                 <img className='tw-followCard-avatar'
                  src="https://unavatar.io/s0yvalen" alt="El avatar de s0yValen" />
                 <div className='tw-followCard-info'>
-                    <strong>Paula Vargas</strong>
+                    <strong>Valentina Vargas</strong>
                     <span className='tw-followCard-infoUserName'>@s0yValen</span>
                 </div>
             </header>
