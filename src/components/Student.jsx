@@ -1,8 +1,5 @@
-// import axios from 'axios';
-import {useEffect, useState } from "react";
-import api from '../api'; // Asegúrate de ajustar la ruta si está en una subcarpeta
-
-// Elimina axios.defaults y usa api en su lugar
+import { useEffect, useState } from "react";
+import api from '../api'; // Asegúrate de ajustar la ruta si api.js está en una subcarpeta
 
 function Student() {
   const [id, setId] = useState('');
@@ -16,7 +13,7 @@ function Student() {
   }, []);
 
   async function Load() {
-    const result = await api.get("/student"); // Usa api en lugar de axios
+    const result = await api.get("/student");
     setStudents(result.data);
     console.log(result.data);
   }
@@ -69,7 +66,67 @@ function Student() {
   return (
     <div>
       <h1>Student Details</h1>
-      {/* Resto del código del componente */}
+      <div className="container">
+        <form>
+          <div className="form-group">
+            <input type="text" className="form-control" id="student_id" hidden
+              value={id}
+              onChange={(event) => setId(event.target.value)}
+            />
+            <label>Student Name</label>
+            <input type="text" className="form-control" id="studentName"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Student Address</label>
+            <input type="text" className="form-control" id="studentAddress"
+              value={address}
+              onChange={(event) => setAddress(event.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone</label>
+            <input type="text" className="form-control" id="studentPhone"
+              value={phone}
+              onChange={(event) => setPhone(event.target.value)}
+            />
+          </div>
+          <div>
+            <button className="btn btn-primary mt-4" onClick={save}>Register</button>
+            <button className="btn btn-warning mt-4" onClick={update}>Update</button>
+          </div>
+        </form>
+      </div>
+      <br />
+      <div>
+        <table className="table table-dark" align="center">
+          <thead>
+            <tr>
+              <th scope="col">Student Id</th>
+              <th scope="col">Student Name</th>
+              <th scope="col">Student Address</th>
+              <th scope="col">Student Phone</th>
+              <th scope="col">Option</th>
+            </tr>
+          </thead>
+          {students.map(student => (
+            <tbody key={student.id}>
+              <tr>
+                <th scope="row">{student.id}</th>
+                <td>{student.name}</td>
+                <td>{student.address}</td>
+                <td>{student.phone}</td>
+                <td>
+                  <button type="button" className="btn btn-warning" onClick={() => editStudent(student)}>Edit</button>
+                  <button type="button" className="btn btn-danger" onClick={() => DeleteStudent(student.id)}>Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
+      </div>
     </div>
   );
 }
