@@ -44,6 +44,7 @@ export default function register(){
                     <p className="message">
                         Already Have An Account? <Link to= '/proyectoInvestigacion/auth/login'>Login</Link>
                     </p>
+                    
                 </form>
             </div>
         </div>
