@@ -23,9 +23,9 @@ function LandingPage() {
       <main className="flex flex-col lg:flex-row items-center justify-between p-10">
         {/* Información de la Izquierda */}
         <div className="text-center lg:text-left max-w-md">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Create Engaging Landing Pages</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Transforma tus Eventos con Tecnología QR</h1>
           <p className="text-gray-800 mb-6">
-            Build beautiful landing pages in record time with <a href="#" className="text-blue-600">Anima’s</a> Landing Page UI kit for Figma. No code required!
+            Simplifica el acceso y mejora la experiencia de tus asistentes con nuestra plataforma de entradas digitales. Genera tickets únicos en segundos y olvídate de las largas filas. ¡Gestiona tus eventos de forma moderna, rápida y segura!
           </p>
           {/* <div className="flex justify-center lg:justify-start space-x-4">
             <Link to="/auth/login">

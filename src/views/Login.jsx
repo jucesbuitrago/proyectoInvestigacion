@@ -42,7 +42,7 @@ export default function Login() {
       <div className="w-2/3 bg-white flex flex-col justify-between p-12">
         {/* Back Button */}
         <div className="flex justify-end">
-          <Link to="/" className="text-gray-400">Salir</Link>
+          <Link to="/proyectoInvestigacion" className="text-gray-400">Salir</Link>
         </div>
 
         {/* Welcome Message */}
